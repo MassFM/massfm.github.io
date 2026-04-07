@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajian Islam Ilmiah - Masjid Al-Huda Kp. Banyon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-bg: #f4f1ea; /* Warna krem kertas poster */
+            --accent-gold: #c5a059; /* Warna emas/bronze */
+            --dark-green: #2c3e2d; /* Warna teks judul poster */
+            --text-color: #4a4a4a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header / Logo */
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .sragen-mengaji-badge {
+            background-color: var(--dark-green);
+            color: var(--white);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: var(--white);
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e0dcd0;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .speaker-box {
+            margin: 25px 0;
+            border-top: 2px solid var(--primary-bg);
+            border-bottom: 2px solid var(--primary-bg);
+            padding: 20px 0;
+        }
+
+        .speaker-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark-green);
+        }
+
+        .theme-box {
+            background-color: var(--primary-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        /* Details Section */
+        .details {
+            margin-top: 30px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .info-card i {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-right: 20px;
+            width: 30px;
+            text-align: center;
+        }
+
+        /* Call to Action Buttons */
+        .cta-container {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-map {
+            background-color: var(--dark-green);
+            color: white;
+        }
+
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn-live {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .ornament {
+            width: 100px;
+            margin: 20px auto;
+            opacity: 0.3;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="sragen-mengaji-badge">LIVE SRAGEN MENGAJI</div>
+        <p>🕌 Bismillah</p>
+    </header>
+
+    <main class="hero">
+        <h1>Kajian Islam Ilmiah</h1>
+        <p class="subtitle">Rutin Setiap Rabu Malam</p>
+        
+        <div class="speaker-box">
+            <p>Bersama Pemateri:</p>
+            <div class="speaker-name">Ustadz Rizky Narendra, Lc</div>
+            <p style="font-size: 0.8rem;">Hafidzahullah</p>
+        </div>
+
+        <div class="theme-box">
+            <p>"Amalan Harian Seorang Muslim Berdasarkan Al-Qur’an dan As-Sunnah"</p>
+        </div>
+
+        <p style="font-size: 0.9rem;">Mari ajak keluarga dan sahabat untuk menuntut ilmu syar'i. Semoga menjadi amal jariyah.</p>
+    </main>
+
+    <div class="details">
+        <div class="info-card">
+            <i class="far fa-calendar-alt"></i>
+            <div>
+                <strong>Waktu</strong><br>
+                Rabu, 08 April 2026<br>
+                Ba’da Magrib – Selesai
+            </div>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+                <strong>Lokasi</strong><br>
+                Masjid Al-Huda Kp. Banyon
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-container">
+        <a href="https://www.google.com/maps/search/?api=1&query=Masjid+Al-Huda+Kp+Banyon" target="_blank" class="btn btn-map">
+            <i class="fas fa-directions"></i> PETUNJUK LOKASI (MAPS)
+        </a>
+        
+        <a href="https://wa.me/6281327379909?text=Assalamu'alaikum,%20ingin%20tanya%20tentang%20Kajian%20Banyon" target="_blank" class="btn btn-wa">
+            <i class="fab fa-whatsapp"></i> INFO: ABU AISY NARNO
+        </a>
+
+        <a href="#" class="btn btn-live">
+            <i class="fas fa-broadcast-tower"></i> STREAMING (SRAGEN MENGAJI)
+        </a>
+    </div>
+
+    <footer>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Divider_ornament_1.svg/1024px-Divider_ornament_1.svg.png" class="ornament" alt="ornament">
+        <p>&copy; 2026 MassFM - Sragen Mengaji</p>
+    </footer>
+</div>
+
+</body>
+</html>
