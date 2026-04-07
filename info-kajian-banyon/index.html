@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kajian Islam Ilmiah - Masjid Al-Huda Kp. Banyon</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -27,67 +29,93 @@
             background-color: var(--primary-bg);
             color: var(--text-color);
             line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            margin: 20px;
+            padding: 10px;
         }
 
         /* Header / Logo */
         header {
             text-align: center;
-            padding: 30px 0;
+            padding: 20px 0;
         }
 
         .sragen-mengaji-badge {
             background-color: var(--dark-green);
             color: var(--white);
             display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 6px 18px;
+            border-radius: 25px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         /* Hero Section */
         .hero {
             text-align: center;
             background: var(--white);
-            padding: 40px 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
             border: 1px solid #e0dcd0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 5px;
+            background: var(--accent-gold);
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
             color: var(--dark-green);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            margin-bottom: 5px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .subtitle {
             font-family: 'Montserrat', sans-serif;
             color: var(--accent-gold);
             font-weight: 700;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            display: block;
         }
 
         .speaker-box {
-            margin: 25px 0;
-            border-top: 2px solid var(--primary-bg);
-            border-bottom: 2px solid var(--primary-bg);
-            padding: 20px 0;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .speaker-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 5px;
         }
 
         .speaker-name {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: var(--dark-green);
         }
@@ -95,91 +123,92 @@
         .theme-box {
             background-color: var(--primary-bg);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin: 20px 0;
             font-style: italic;
+            border-left: 4px solid var(--accent-gold);
         }
 
         /* Details Section */
         .details {
-            margin-top: 30px;
+            margin-top: 25px;
             display: grid;
-            gap: 15px;
+            gap: 12px;
         }
 
         .info-card {
             background: var(--white);
-            padding: 15px 20px;
-            border-radius: 10px;
+            padding: 18px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
         }
 
         .info-card i {
             color: var(--accent-gold);
-            font-size: 1.5rem;
-            margin-right: 20px;
+            font-size: 1.4rem;
+            margin-right: 15px;
             width: 30px;
             text-align: center;
         }
 
-        /* Call to Action Buttons */
+        .info-card strong {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        /* Buttons Section */
         .cta-container {
             margin-top: 30px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .btn {
-            display: block;
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            border-radius: 12px;
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            transition: transform 0.2s;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .btn:active {
-            transform: scale(0.98);
-        }
+        .btn i { margin-right: 10px; font-size: 1.1rem; }
 
-        .btn-map {
-            background-color: var(--dark-green);
-            color: white;
-        }
+        .btn-map { background-color: var(--dark-green); color: white; }
+        .btn-wa { background-color: #25D366; color: white; }
+        .btn-live { background-color: #ff0000; color: white; }
 
-        .btn-wa {
-            background-color: #25D366;
-            color: white;
-        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
 
-        .btn-live {
-            background-color: #ff0000;
-            color: white;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             margin-top: 40px;
-            padding-bottom: 40px;
-            font-size: 0.9rem;
-            color: #888;
+            padding-bottom: 30px;
+            font-size: 0.8rem;
+            color: #aaa;
         }
 
         .ornament {
-            width: 100px;
-            margin: 20px auto;
-            opacity: 0.3;
+            width: 80px;
+            margin-bottom: 15px;
+            opacity: 0.2;
         }
 
-        /* Responsive */
         @media (max-width: 480px) {
-            h1 { font-size: 1.8rem; }
+            h1 { font-size: 1.7rem; }
+            .container { margin: 10px; }
         }
     </style>
 </head>
@@ -188,56 +217,61 @@
 <div class="container">
     <header>
         <div class="sragen-mengaji-badge">LIVE SRAGEN MENGAJI</div>
-        <p>🕌 Bismillah</p>
+        <p style="font-size: 0.9rem; letter-spacing: 2px;">🕌 BISMILLAH</p>
     </header>
 
     <main class="hero">
         <h1>Kajian Islam Ilmiah</h1>
-        <p class="subtitle">Rutin Setiap Rabu Malam</p>
+        <span class="subtitle">Rutin Setiap Rabu Malam</span>
         
         <div class="speaker-box">
-            <p>Bersama Pemateri:</p>
+            <p class="speaker-label">Bersama Pemateri:</p>
             <div class="speaker-name">Ustadz Rizky Narendra, Lc</div>
-            <p style="font-size: 0.8rem;">Hafidzahullah</p>
+            <p style="font-size: 0.8rem; color: #666;">(Hafidzahullah)</p>
         </div>
 
         <div class="theme-box">
             <p>"Amalan Harian Seorang Muslim Berdasarkan Al-Qur’an dan As-Sunnah"</p>
         </div>
 
-        <p style="font-size: 0.9rem;">Mari ajak keluarga dan sahabat untuk menuntut ilmu syar'i. Semoga menjadi amal jariyah.</p>
+        <p style="font-size: 0.85rem; color: #777;">Mari hadir dan ajak keluarga serta sahabat untuk menuntut ilmu syar'i. Semoga menjadi amal jariyah.</p>
     </main>
 
     <div class="details">
         <div class="info-card">
-            <i class="far fa-calendar-alt"></i>
+            <i class="far fa-calendar-check"></i>
             <div>
-                <strong>Waktu</strong><br>
-                Rabu, 08 April 2026<br>
+                <strong>Waktu Pelaksanaan</strong>
+                Rabu, 08 April 2026 <br>
                 Ba’da Magrib – Selesai
             </div>
         </div>
 
         <div class="info-card">
-            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-mosque"></i>
             <div>
-                <strong>Lokasi</strong><br>
+                <strong>Lokasi Kajian</strong>
                 Masjid Al-Huda Kp. Banyon
             </div>
         </div>
     </div>
 
     <div class="cta-container">
-        <a href="https://www.google.com/maps/search/?api=1&query=Masjid+Al-Huda+Kp+Banyon" target="_blank" class="btn btn-map">
-            <i class="fas fa-directions"></i> PETUNJUK LOKASI (MAPS)
+        <a href="https://www.google.com/maps/search/?api=1&query=Masjid+Al-Huda+Kp+Banyon3" 
+           onclick="openExternalMap(event, this.href)" 
+           target="_blank" 
+           class="btn btn-map">
+            <i class="fas fa-location-arrow"></i> PETUNJUK LOKASI (MAPS)
         </a>
         
-        <a href="https://wa.me/6281327379909?text=Assalamu'alaikum,%20ingin%20tanya%20tentang%20Kajian%20Banyon" target="_blank" class="btn btn-wa">
-            <i class="fab fa-whatsapp"></i> INFO: ABU AISY NARNO
+        <a href="https://wa.me/6281327379909?text=Assalamu'alaikum,%20ingin%20tanya%20tentang%20Kajian%20Banyon" 
+           target="_blank" 
+           class="btn btn-wa">
+            <i class="fab fa-whatsapp"></i> HUBUNGI: ABU AISY NARNO
         </a>
 
         <a href="#" class="btn btn-live">
-            <i class="fas fa-broadcast-tower"></i> STREAMING (SRAGEN MENGAJI)
+            <i class="fas fa-video"></i> STREAMING SRAGEN MENGAJI
         </a>
     </div>
 
@@ -246,6 +280,27 @@
         <p>&copy; 2026 MassFM - Sragen Mengaji</p>
     </footer>
 </div>
+
+<script>
+function openExternalMap(event, url) {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Deteksi jika perangkat adalah Android
+    if (/android/i.test(userAgent)) {
+        event.preventDefault(); // Batalkan aksi klik standar
+        
+        // Membersihkan protokol agar bisa masuk ke format Intent
+        var cleanUrl = url.replace(/^https?:\/\//, "");
+        
+        // Format Intent untuk memaksa Android membuka browser eksternal atau aplikasi Maps langsung
+        // Ini akan memicu 'App Chooser' atau membuka browser default Chrome, bukan WebView Mass FM
+        var intentUrl = "intent://" + cleanUrl + "#Intent;scheme=https;action=android.intent.action.VIEW;end;";
+        
+        window.location.href = intentUrl;
+    }
+    // Untuk iOS atau Desktop, link akan tetap terbuka di tab baru secara normal
+}
+</script>
 
 </body>
 </html>
