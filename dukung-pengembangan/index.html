@@ -1,3 +1,8 @@
+Tentu, ini adalah kode lengkap Anda yang sudah saya integrasikan dengan fitur kalkulasi dan animasi *progress bar* otomatis. 
+
+Struktur desain, font (Plus Jakarta Sans), dan ikon (Phosphor) yang Anda buat tetap dipertahankan persis seperti aslinya. Anda sekarang hanya perlu mengubah variabel `targetOperasional` dan `danaTerkumpul` di dalam blok `<script>` bagian bawah.
+
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -50,16 +55,16 @@
             <div class="flex justify-between items-end mb-4">
                 <div>
                     <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">Target Operasional April 2026</h2>
-                    <p class="text-2xl font-extrabold text-brand-purple">Rp 1.250.000</p>
+                    <p class="text-2xl font-extrabold text-brand-purple" id="text-target">Rp 1.500.000</p>
                 </div>
-                <span class="text-brand-gold font-bold text-lg">75%</span>
+                <span class="text-brand-gold font-bold text-lg" id="progress-text">0%</span>
             </div>
             
             <div class="w-full bg-gray-100 h-4 rounded-full overflow-hidden mb-3">
-                <div class="bg-brand-gold h-full rounded-full transition-all duration-1000 ease-out" style="width: 75%;"></div>
+                <div id="progress-bar" class="bg-brand-gold h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%;"></div>
             </div>
             <p class="text-xs text-gray-400 italic text-right">
-                Terkumpul: Rp 937.500
+                Terkumpul: <span id="text-terkumpul" class="font-semibold">Rp 500.000</span>
             </p>
         </div>
 
@@ -72,7 +77,7 @@
                     </div>
                     <div>
                         <h4 class="font-bold text-base">Infrastruktur & Server</h4>
-                        <p class="text-sm text-gray-500 mt-1">Biaya cloud computing, server, domain, dan database agar aplikasi.</p>
+                        <p class="text-sm text-gray-500 mt-1">Biaya cloud computing, server, domain, dan database agar aplikasi berjalan normal.</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-4">
@@ -143,6 +148,57 @@
     </main>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ==========================================
+            // ⚙️ PENGATURAN DATA DONASI (UBAH DI SINI)
+            // ==========================================
+            const targetOperasional = 1250000; // Target bulanan
+            const danaTerkumpul = 937500;      // Total terkumpul saat ini
+            // ==========================================
+
+            // Fungsi Format Rupiah
+            const formatRupiah = (angka) => {
+                return new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                    minimumFractionDigits: 0
+                }).format(angka);
+            };
+
+            // Menyisipkan angka ke elemen HTML
+            document.getElementById('text-target').innerText = formatRupiah(targetOperasional);
+            document.getElementById('text-terkumpul').innerText = formatRupiah(danaTerkumpul);
+
+            // Hitung Persentase
+            let targetPercentage = (danaTerkumpul / targetOperasional) * 100;
+            if (targetPercentage > 100) targetPercentage = 100; // Mencegah bar melebihi 100%
+
+            // Animasi Progress Bar
+            setTimeout(() => {
+                const progressBar = document.getElementById('progress-bar');
+                const progressText = document.getElementById('progress-text');
+                
+                progressBar.style.width = targetPercentage + '%';
+                
+                let current = 0;
+                if (targetPercentage === 0) {
+                    progressText.innerText = '0%';
+                    return;
+                }
+
+                const increment = targetPercentage / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= targetPercentage) {
+                        current = targetPercentage;
+                        clearInterval(timer);
+                    }
+                    progressText.innerText = Math.round(current) + '%';
+                }, 20);
+            }, 500); 
+        });
+
+        // Fungsi Copy ke Clipboard
         function copyRekening() {
             const rekNumber = document.getElementById('rek-number').innerText;
             navigator.clipboard.writeText(rekNumber).then(() => {
@@ -158,3 +214,4 @@
     </script>
 </body>
 </html>
+```
